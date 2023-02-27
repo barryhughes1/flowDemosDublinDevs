@@ -1,0 +1,28 @@
+<template>
+    <div>
+        <img src={currencyImage}/>
+    </div>
+
+    <div>
+        <lightning-formatted-number value={amountInEuro} format-style="currency" currency-code="EUR" currency-display-as="symbol"></lightning-formatted-number> - 
+        <lightning-formatted-number value={amountInUsd} format-style="currency" currency-code="USD" currency-display-as="symbol"></lightning-formatted-number>
+    </div>
+
+    <div class="slds-clearfix" style="height: 60px;">
+        <div class="slds-float_right" >
+            <lightning-button
+                class="slds-m-top_small slds-m-right_small"
+                variant="brand-outline"
+                label="Previous"
+                onclick={handleBack}>
+            </lightning-button>
+            <lightning-button 
+                class="slds-button slds-m-top_small"
+                type="submit"
+                variant="brand"
+                label="Next"
+                onclick={handleNext}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Get the weather for the city in the lead record</description>
+        <name>Call_Weather</name>
+        <label>Call Weather</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <actionName>CallWeatherStackAPI.WeatherStackAPI</actionName>
+        <actionType>externalService</actionType>
+        <connector>
+            <targetReference>Lead_Check_Weather</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>access_key</name>
+            <value>
+                <elementReference>$Label.WeatherstackAPIKey</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>query</name>
+            <value>
+                <elementReference>recordId.City</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>units</name>
+            <value>
+                <stringValue>m</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <description>https://blog.certifycrm.com/http-callouts-from-flow/</description>
+    <environments>Default</environments>
+    <interviewLabel>Weather Stack (HTTP Callout) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Weather Stack (HTTP Callout)</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Lead_Check_Weather</name>
+        <label>Lead - Check Weather</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Display_Weather</name>
+            <fieldText>&lt;p&gt;Response Code: &lt;/p&gt;&lt;p&gt;{!Call_Weather.responseCode}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Weather for: &lt;/p&gt;&lt;p&gt;{!Call_Weather.2XX.location.name} {!Call_Weather.2XX.location.country}&lt;/p&gt;&lt;p&gt;at: {!Call_Weather.2XX.location.localtime} &lt;/p&gt;&lt;p&gt;Temperature: &lt;/p&gt;&lt;p&gt;{!Call_Weather.2XX.current.temperature}&lt;/p&gt;&lt;p&gt;Humidity: {!Call_Weather.2XX.current.humidity}&lt;/p&gt;&lt;p&gt;Feels Like: {!Call_Weather.2XX.current.feelslike}&lt;/p&gt;&lt;p&gt;Rainfall: {!Call_Weather.2XX.current.precip}&lt;/p&gt;&lt;p&gt;Wind Speed: {!Call_Weather.2XX.current.windx5fspeed}&lt;/p&gt;&lt;p&gt;Wind Direction: {!Call_Weather.2XX.current.windx5fdir}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Weather</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>
