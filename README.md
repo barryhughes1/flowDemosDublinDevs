@@ -1,18 +1,30 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Dublin Admin & Developer Groups
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Salesforce Dublin Developer Group: https://trailblazercommunitygroups.com/salesforce-developer-group-dublin-ireland/
 
-## How Do You Plan to Deploy Your Changes?
+Twitter: @dublin_sf_devs (https://twitter.com/dublin_sf_devs)
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Salesforce Dublin Admin Group: https://trailblazercommunitygroups.com/salesforce-admin-group-dublin-ireland/
 
-## Configure Your Salesforce DX Project
+## Feb 28 2023 Winter Social - Flow Demos
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+This repository contains the metadata (Flows, Apex Classes and Lightning Web Components) used in demos at the Dublin City Winter Social event - https://trailblazercommunitygroups.com/events/details/salesforce-salesforce-developer-group-dublin-ireland-presents-dublin-city-winter-social/
 
-## Read All About It
+The associated presentation slides are available: 
+https://docs.google.com/presentation/d/1jYHn9l1wiB_uzb-cfb85jgBrhNXjCm7yrHWhItI7vWg
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Authors
+
+### Stanislav Kosachev
+
+Principal Software Developer 
+
+Asset Class (http://assetclass.com)
+
+### Barry Hughes
+
+Lead Developer Architect
+
+Blue Wave Technology (http://bluewavecx.com)
+
+Twitter: @devinthecloud
